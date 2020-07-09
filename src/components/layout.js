@@ -8,8 +8,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Nav from "./nav"
 
-import Header from "./header"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -18,29 +18,37 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          menuLinks {
+            name
+            link
+          }
         }
       }
     }
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+    <div className="container">
       <div
+        className="flex w-full"
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
+          maxWidth: 1700,
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <div className="flex flex-row">
+          <Nav
+            menuLinks={data.site.siteMetadata.menuLinks}
+            siteTitle={data.site.siteMetadata.title}
+          />
+          <main>{children}</main>
+        </div>
+        {/* <footer className="'w-full text-center p-4 pin-b'">
+          social icon links fixed to bottom right corner
+        </footer> */}
       </div>
-    </>
+    </div>
   )
 }
 
