@@ -23,6 +23,13 @@ module.exports = {
     ],
   },
   plugins: [
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `xrx4c7j282ac`,
+        accessToken: `_wCUOQaQQSDXB08_2kUU8FHGrhIL49nRH3NC-fdH1sE`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
     {
