@@ -9,12 +9,12 @@ module.exports = {
         link: "/",
       },
       {
-        name: "ABOUT",
-        link: "/about",
-      },
-      {
         name: "BLOG",
         link: "/blog",
+      },
+      {
+        name: "ABOUT",
+        link: "/about",
       },
       {
         name: "CONTACT",

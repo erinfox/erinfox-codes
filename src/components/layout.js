@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
     }
   `)
   return (
-    <div className="mx-12">
+    <div className="mx-12 h-screen">
       <div className="text-3xl font-semibold flex justify-end mx-10 my-10">
         <Link to="/">ERIN FOX</Link>
         <div className="block lg:hidden pl-2 self-center">
@@ -78,8 +78,8 @@ const Layout = ({ children }) => {
           </div>
         </nav>
       ) : (
-        <div className="container flex items-center justify-start h-screen">
-          <div className="flex flex-row pr-16 ">
+        <div className="container flex h-screen">
+          <div className="flex flex-row pr-16">
             <Nav
               menuLinks={data.site.siteMetadata.menuLinks}
               siteTitle={data.site.siteMetadata.title}
