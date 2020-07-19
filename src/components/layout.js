@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
     }
   `)
   return (
-    <div className="mx-12 h-screen">
+    <div className="mx-8 h-screen">
       <div className="text-3xl font-semibold flex justify-end mx-10 my-10">
         <Link to="/">ERIN FOX</Link>
         <div className="block lg:hidden pl-2 self-center">
@@ -89,11 +89,23 @@ const Layout = ({ children }) => {
           <main>{children}</main>
         </div>
       )}
-      <div className="h-14 w-14">
-        <div className="absolute bottom-0 right-0 h-8 w-8 flex flex-row mr-24">
-          <FaGithub />
-          <FaTwitter />
-          <FaLinkedinIn />
+      <div>
+        <div className="absolute bottom-0 right-0 flex flex-row pr-16 pb-8">
+          <Link to={`https://github.com/erinfox`}>
+            <FaGithub
+              style={{ height: "40", width: "40", paddingRight: "10px" }}
+            />
+          </Link>
+          <Link to={`https://twitter.com/erinfoox`}>
+            <FaTwitter
+              style={{ height: "40", width: "40", paddingRight: "10px" }}
+            />
+          </Link>
+          <Link to={`https://www.linkedin.com/in/erinkfox/`}>
+            <FaLinkedinIn
+              style={{ height: "40", width: "40", paddingRight: "10px" }}
+            />
+          </Link>
         </div>
       </div>
     </div>
