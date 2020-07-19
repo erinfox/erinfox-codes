@@ -1,10 +1,6 @@
 module.exports = {
-  purge: ["./components/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
-  theme: {
-    extend: {},
-  },
-  variants: {
-    backgroundColor: ["responsive", "hover", "focus", "active"],
-  },
+  purge: ["./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx"],
+  theme: {},
+  variants: {},
   plugins: [],
 }
