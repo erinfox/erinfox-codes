@@ -11,8 +11,8 @@ import debounce from "lodash/debounce"
 const useScreenDimensions = (delay = 300) => {
   const getDimensions = () => {
     return {
-      width: window?.innerWidth,
-      height: window?.innerHeight,
+      width: typeof window !== "undefined" && window.innerWidth,
+      height: typeof window !== "undefined" && window.innerHeight,
     }
   }
 
