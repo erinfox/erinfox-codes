@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Nav from "./nav"
 import { Link } from "gatsby"
 import useScreenDimensions from "../hooks/screen-width"
+import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa"
 
 import "./layout.css"
 
@@ -86,11 +87,15 @@ const Layout = ({ children }) => {
             />
           </div>
           <main>{children}</main>
-          {/* <footer className="'w-full text-center p-4 pin-b'">
-          social icon links fixed to bottom right corner
-        </footer> */}
         </div>
       )}
+      <div className="h-14 w-14">
+        <div className="absolute bottom-0 right-0 h-8 w-8 flex flex-row mr-24">
+          <FaGithub />
+          <FaTwitter />
+          <FaLinkedinIn />
+        </div>
+      </div>
     </div>
   )
 }
