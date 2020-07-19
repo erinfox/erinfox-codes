@@ -67,10 +67,11 @@ const Layout = ({ children }) => {
               </Link>
             </div>
           </div>
+          <main>{children}</main>
         </nav>
       ) : (
-        <div className="container flex h-screen fixed">
-          <div className="flex flex-row pr-16">
+        <div className="flex h-screen">
+          <div className="pr-16 fixed">
             <Nav
               menuLinks={data.site.siteMetadata.menuLinks}
               siteTitle={data.site.siteMetadata.title}
@@ -79,7 +80,7 @@ const Layout = ({ children }) => {
           <main>{children}</main>
         </div>
       )}
-      <div className="bottom-0 right-0 flex flex-row fixed md:pr-16 md:pb-8 justify-center">
+      <div className="fixed bottom-0 right-0 flex flex-row md:pr-16 md:pb-8">
         <Link to={`https://github.com/erinfox`}>
           <FaGithub
             style={{ height: "40", width: "40", paddingRight: "10px" }}

@@ -7,7 +7,6 @@ import SEO from "../components/seo"
 const ContactPage = () => (
   <Layout>
     <SEO title="Contact" />
-    <p>Chat chat chat</p>
   </Layout>
 )
 

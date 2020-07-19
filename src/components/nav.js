@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 
 const Nav = ({ siteTitle, menuLinks }) => (
-  <nav className="text-3xl sticky">
+  <nav className="text-3xl">
     <Link to="/"></Link>
     <ul>
       {menuLinks.map(link => (
