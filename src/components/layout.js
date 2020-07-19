@@ -29,7 +29,9 @@ const Layout = ({ children }) => {
   return (
     <div className="mx-8 h-screen">
       <div className="text-3xl font-semibold flex justify-end mx-10 my-10">
-        <Link to="/">ERIN FOX</Link>
+        <Link className="fixed" to="/">
+          ERIN FOX
+        </Link>
         <div className="block lg:hidden pl-2 self-center">
           <button
             onClick={() => toggleExpansion(!isExpanded)}
@@ -79,7 +81,7 @@ const Layout = ({ children }) => {
           </div>
         </nav>
       ) : (
-        <div className="container flex h-screen">
+        <div className="container flex h-screen fixed">
           <div className="flex flex-row pr-16">
             <Nav
               menuLinks={data.site.siteMetadata.menuLinks}
@@ -89,24 +91,22 @@ const Layout = ({ children }) => {
           <main>{children}</main>
         </div>
       )}
-      <div>
-        <div className="absolute bottom-0 right-0 flex flex-row pr-16 pb-8">
-          <Link to={`https://github.com/erinfox`}>
-            <FaGithub
-              style={{ height: "40", width: "40", paddingRight: "10px" }}
-            />
-          </Link>
-          <Link to={`https://twitter.com/erinfoox`}>
-            <FaTwitter
-              style={{ height: "40", width: "40", paddingRight: "10px" }}
-            />
-          </Link>
-          <Link to={`https://www.linkedin.com/in/erinkfox/`}>
-            <FaLinkedinIn
-              style={{ height: "40", width: "40", paddingRight: "10px" }}
-            />
-          </Link>
-        </div>
+      <div className="bottom-0 right-0 flex flex-row pr-16 pb-8 fixed">
+        <Link to={`https://github.com/erinfox`}>
+          <FaGithub
+            style={{ height: "40", width: "40", paddingRight: "10px" }}
+          />
+        </Link>
+        <Link to={`https://twitter.com/erinfoox`}>
+          <FaTwitter
+            style={{ height: "40", width: "40", paddingRight: "10px" }}
+          />
+        </Link>
+        <Link to={`https://www.linkedin.com/in/erinkfox/`}>
+          <FaLinkedinIn
+            style={{ height: "40", width: "40", paddingRight: "10px" }}
+          />
+        </Link>
       </div>
     </div>
   )
