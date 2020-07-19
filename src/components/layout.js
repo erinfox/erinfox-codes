@@ -28,11 +28,11 @@ const Layout = ({ children }) => {
   `)
   return (
     <div className="mx-8 h-screen">
-      <div className="text-3xl font-semibold flex justify-end mx-10 my-10">
-        <Link className="fixed" to="/">
+      <div className="text-3xl font-semibold flex justify-center md:justify-end mx-10 my-10">
+        <Link className="md:fixed absolute top-0 md:mt-8 sm:insert-x-0 " to="/">
           ERIN FOX
         </Link>
-        <div className="block lg:hidden pl-2 self-center">
+        <div className=" lg:hidden pl-2 absolute top-0 right-0 mr-2 mt-2">
           <button
             onClick={() => toggleExpansion(!isExpanded)}
             className="flex items-center px-3 py-2 border rounded"
@@ -48,33 +48,21 @@ const Layout = ({ children }) => {
         </div>
       </div>
       {width < BREAKPOINT ? (
-        <nav className="flex items-center justify-between flex-wrap">
+        <nav className="flex items-center flex-wrap">
           <div
-            className={`${
-              isExpanded ? `block` : `hidden`
-            } w-full block flex-grow lg:flex lg:items-center lg:w-auto`}
+            className={`${isExpanded ? `block` : `hidden`} w-full flex-grow `}
           >
-            <div className="text-sm lg:flex-grow">
-              <Link
-                to={`/`}
-                href="#responsive-header"
-                className="block mt-4 lg:inline-block lg:mt-0 mr-4 "
-              >
+            <div className="text-sm flex flex-col items-center justify-center">
+              <Link to={`/`} href="#responsive-header">
                 HOME
               </Link>
-              <Link
-                to={`/about`}
-                className="block mt-4 lg:inline-block lg:mt-0 mr-4"
-              >
+              <Link to={`/about`} className="mt-4 ">
                 ABOUT
               </Link>
-              <Link to={`/blog`} className="block mt-4 lg:inline-block lg:mt-0">
+              <Link to={`/blog`} className="mt-4 ">
                 BLOG
               </Link>
-              <Link
-                to={`/contact`}
-                className="block mt-4 lg:inline-block lg:mt-0"
-              >
+              <Link to={`/contact`} className="mt-4 ">
                 CONTACT
               </Link>
             </div>
@@ -91,7 +79,7 @@ const Layout = ({ children }) => {
           <main>{children}</main>
         </div>
       )}
-      <div className="bottom-0 right-0 flex flex-row pr-16 pb-8 fixed">
+      <div className="bottom-0 right-0 flex flex-row fixed md:pr-16 md:pb-8 justify-center">
         <Link to={`https://github.com/erinfox`}>
           <FaGithub
             style={{ height: "40", width: "40", paddingRight: "10px" }}
