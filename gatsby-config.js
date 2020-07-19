@@ -5,19 +5,19 @@ module.exports = {
     author: `Erin Fox`,
     menuLinks: [
       {
-        name: "home",
+        name: "HOME",
         link: "/",
       },
       {
-        name: "about",
+        name: "ABOUT",
         link: "/about",
       },
       {
-        name: "blog",
+        name: "BLOG",
         link: "/blog",
       },
       {
-        name: "contact",
+        name: "CONTACT",
         link: "/contact",
       },
     ],

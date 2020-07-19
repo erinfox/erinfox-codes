@@ -44,8 +44,7 @@ const BlogPage = () => {
   // `)
   return (
     <Layout>
-      <SEO title="About" />
-      <h1>Blog</h1>
+      <SEO title="Blog" />
       <Header />
       {/* <p>{data.title}</p> */}
     </Layout>
