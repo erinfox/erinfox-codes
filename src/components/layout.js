@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Nav from "./nav"
@@ -6,6 +6,24 @@ import { Link } from "gatsby"
 import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa"
 
 import "./layout.css"
+
+const useWindowWidth = () => {
+  const isBrowser = typeof window !== "undefined"
+  const [width, setWidth] = useState(isBrowser ? window.innerWidth : 0)
+
+  useEffect(() => {
+    if (!isBrowser) return false
+
+    const handleResize = () => setWidth(window.innerWidth)
+    window.addEventListener("resize", handleResize)
+
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
+  })
+
+  return width
+}
 
 const Layout = ({ children }) => {
   const [isExpanded, toggleExpansion] = useState(false)
@@ -23,7 +41,7 @@ const Layout = ({ children }) => {
     }
   `)
   const BREAKPOINT = 640
-  const width = window.innerWidth
+  const width = useWindowWidth()
 
   return (
     <div className="mx-8 h-screen">
