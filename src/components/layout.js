@@ -3,16 +3,12 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Nav from "./nav"
 import { Link } from "gatsby"
-import useScreenDimensions from "../hooks/screen-width"
 import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa"
 
 import "./layout.css"
 
-const BREAKPOINT = 640
-
 const Layout = ({ children }) => {
   const [isExpanded, toggleExpansion] = useState(false)
-  const { width } = useScreenDimensions()
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -26,6 +22,9 @@ const Layout = ({ children }) => {
       }
     }
   `)
+  const BREAKPOINT = 640
+  const width = typeof window !== "undefined" && window.innerWidth
+
   return (
     <div className="mx-8 h-screen">
       <div className="text-3xl font-semibold flex justify-center md:justify-end mx-10 my-10">
