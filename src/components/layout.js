@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
     }
   `)
   const BREAKPOINT = 640
-  const width = screen.width
+  const width = window.location
 
   return (
     <div className="mx-8 h-screen">
