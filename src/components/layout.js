@@ -17,9 +17,12 @@ const useWindowWidth = () => {
     const handleResize = () => setWidth(window.innerWidth)
     window.addEventListener("resize", handleResize)
 
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
+    return (
+      () => {
+        window.removeEventListener("resize", handleResize)
+      },
+      [window.innerWidth]
+    )
   })
 
   return width
@@ -41,8 +44,8 @@ const Layout = ({ children }) => {
     }
   `)
   const BREAKPOINT = 640
-  // const width = useWindowWidth()
-  const width = typeof window !== "undefined" && window.innerWidth
+  const width = useWindowWidth()
+  // const width = typeof window !== "undefined" && window.innerWidth
 
   return (
     <div className="mx-8 h-screen">
