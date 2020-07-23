@@ -17,7 +17,7 @@ const Nav = ({ siteTitle, menuLinks }) => (
         >
           <Link
             style={{ color: `black` }}
-            className="focus:outline-none focus:shadow-outline"
+            className="focus:outline-none focus:shadow-outline text-sm"
             to={link.link}
           >
             {link.name}

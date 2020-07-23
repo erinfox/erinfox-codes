@@ -46,7 +46,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/fox.png`, // This path is relative to the root of the site.
+        icon: `src/images/fox.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -58,8 +58,12 @@ module.exports = {
         postCssPlugins: [require(`tailwindcss`)],
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+    //     trackingId: "UA-XXXXXXXXX-X",
+    //   },
+    // },
   ],
 }

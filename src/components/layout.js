@@ -24,13 +24,13 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className="mx-8 h-screen">
+    <div className="mx-40 h-screen">
       <div className="text-3xl font-semibold flex justify-center md:justify-end mx-10 my-10">
         <Link className="md:fixed absolute top-0 md:mt-8 sm:insert-x-0 " to="/">
           ERIN FOX
         </Link>
       </div>
-      <div className="flex items-center flex-wrap sm:h-screen sm:flex-no-wrap sm:items-start">
+      <div className="flex-wrap sm:h-screen sm:items-start">
         <div className=" sm:hidden pl-2 absolute top-0 right-0 mr-2 mt-2">
           <button
             onClick={() => toggleExpansion(!isExpanded)}
@@ -50,7 +50,7 @@ const Layout = ({ children }) => {
             isExpanded ? `block` : `hidden`
           } w-full flex-grow sm:block `}
         >
-          <div className="text-sm flex flex-col items-center justify-center sm:pr-16 sm:fixed">
+          <div className="text-sm flex flex-col items-center justify-center sm:fixed">
             <Nav
               menuLinks={data.site.siteMetadata.menuLinks}
               siteTitle={data.site.siteMetadata.title}
@@ -59,7 +59,7 @@ const Layout = ({ children }) => {
         </div>
         <main>{children}</main>
       </div>
-      <div className="fixed bottom-0 right-0 flex flex-row md:pr-16 md:pb-8">
+      <div className="fixed bottom-0 right-0 flex flex-row md:pr-40 md:pb-8">
         <Link to={`https://github.com/erinfox`}>
           <FaGithub
             style={{ height: "40", width: "40", paddingRight: "10px" }}
