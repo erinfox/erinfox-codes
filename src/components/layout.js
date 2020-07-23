@@ -7,27 +7,6 @@ import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa"
 
 import "./layout.css"
 
-const useWindowWidth = () => {
-  const isBrowser = typeof window !== "undefined"
-  const [width, setWidth] = useState(isBrowser ? window.innerWidth : 0)
-
-  useEffect(() => {
-    if (!isBrowser) return false
-
-    const handleResize = () => setWidth(window.innerWidth)
-    window.addEventListener("resize", handleResize)
-
-    return (
-      () => {
-        window.removeEventListener("resize", handleResize)
-      },
-      [window.innerWidth]
-    )
-  })
-
-  return width
-}
-
 const Layout = ({ children }) => {
   const [isExpanded, toggleExpansion] = useState(false)
   const data = useStaticQuery(graphql`
@@ -43,9 +22,6 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  const BREAKPOINT = 640
-  const width = useWindowWidth()
-  // const width = typeof window !== "undefined" && window.innerWidth
 
   return (
     <div className="mx-8 h-screen">
@@ -53,7 +29,9 @@ const Layout = ({ children }) => {
         <Link className="md:fixed absolute top-0 md:mt-8 sm:insert-x-0 " to="/">
           ERIN FOX
         </Link>
-        <div className=" lg:hidden pl-2 absolute top-0 right-0 mr-2 mt-2">
+      </div>
+      <div className="flex items-center flex-wrap sm:h-screen sm:flex-no-wrap sm:items-start">
+        <div className=" sm:hidden pl-2 absolute top-0 right-0 mr-2 mt-2">
           <button
             onClick={() => toggleExpansion(!isExpanded)}
             className="flex items-center px-3 py-2 border rounded"
@@ -67,40 +45,20 @@ const Layout = ({ children }) => {
             </svg>
           </button>
         </div>
-      </div>
-      {width < BREAKPOINT ? (
-        <nav className="flex items-center flex-wrap">
-          <div
-            className={`${isExpanded ? `block` : `hidden`} w-full flex-grow `}
-          >
-            <div className="text-sm flex flex-col items-center justify-center">
-              <Link to={`/`} href="#responsive-header">
-                HOME
-              </Link>
-              <Link to={`/about`} className="mt-4 ">
-                ABOUT
-              </Link>
-              <Link to={`/blog`} className="mt-4 ">
-                BLOG
-              </Link>
-              <Link to={`/contact`} className="mt-4 ">
-                CONTACT
-              </Link>
-            </div>
-          </div>
-          <main>{children}</main>
-        </nav>
-      ) : (
-        <div className="flex h-screen">
-          <div className="pr-16 fixed">
+        <div
+          className={`${
+            isExpanded ? `block` : `hidden`
+          } w-full flex-grow sm:block `}
+        >
+          <div className="text-sm flex flex-col items-center justify-center sm:pr-16 sm:fixed">
             <Nav
               menuLinks={data.site.siteMetadata.menuLinks}
               siteTitle={data.site.siteMetadata.title}
             />
           </div>
-          <main>{children}</main>
         </div>
-      )}
+        <main>{children}</main>
+      </div>
       <div className="fixed bottom-0 right-0 flex flex-row md:pr-16 md:pb-8">
         <Link to={`https://github.com/erinfox`}>
           <FaGithub
