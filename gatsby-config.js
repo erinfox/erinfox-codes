@@ -4,10 +4,10 @@ module.exports = {
     description: `Portfolio`,
     author: `Erin Fox`,
     menuLinks: [
-      {
-        name: "HOME",
-        link: "/",
-      },
+      // {
+      //   name: "HOME",
+      //   link: "/",
+      // },
       {
         name: "BLOG",
         link: "/blog",
@@ -15,6 +15,10 @@ module.exports = {
       {
         name: "ABOUT",
         link: "/about",
+      },
+      {
+        name: "TALKS",
+        link: "/talks",
       },
       {
         name: "CONTACT",
