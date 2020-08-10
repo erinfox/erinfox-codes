@@ -1,14 +1,22 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import selfie from "../images/erin.png"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const AboutPage = () => (
   <Layout>
     <SEO title="About" />
-    <div className="sm:ml-64 sm:pt-24 flex justify-center flex-col">
-      <p className="mx-24">
+    <div className="sm:ml-64 sm:pt-24 flex justify-center items-center flex-col">
+      <div className="pb-8">
+        <img
+          src={selfie}
+          alt="self picture"
+          className="rounded-lg"
+          style={{ height: "400px" }}
+        />
+      </div>
+      <p className="">
         Erin Fox is an international speaker who has found a home in the React
         Community. Whether it’s building out projects in React or React Native,
         she enjoys a good Flexbox challenge and finding different UI solutions.
