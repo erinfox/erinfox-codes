@@ -9,6 +9,7 @@ This is my personal website built with [Next.js](https://nextjs.org).
 - **[Tailwind CSS 4](https://tailwindcss.com)** - Utility-first CSS framework for styling
 - **[Geist Font](https://vercel.com/font)** - Modern font family optimized with `next/font`
 - **CSS Variables** - Custom properties for dynamic theming
+- **[Vercel Analytics](https://vercel.com/analytics)** - Privacy-friendly analytics
 
 ## Features
 
